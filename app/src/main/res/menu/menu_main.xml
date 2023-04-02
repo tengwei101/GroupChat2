@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/action_logout"
+        android:title="Logout"/>
+
+    <item android:id="@+id/action_profile"
+        android:title="Profile"/>
+
+    <item android:id="@+id/action_search"
+        android:title="Search"
+        android:icon="@android:drawable/ic_menu_search"
+        app:showAsAction="always"
+        app:actionViewClass="android.widget.SearchView"/>
+
+    <item android:id="@+id/action_create_group"
+        android:title="Create Group"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_creategroup_white"/>
+
+    <item android:id="@+id/action_add_participant"
+        android:title="Add Participant"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_add_participant_group_black"/>
+
+    <item android:id="@+id/action_groupinfo"
+        android:title="Group Info"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_group_info_white"/>
+
+</menu>

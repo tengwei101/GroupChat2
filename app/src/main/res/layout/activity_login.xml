@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".LoginActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:textAlignment="center"
+        android:textColor="@color/teal_700"
+        android:layout_marginTop="70dp"
+        android:textStyle="bold"
+        android:textSize="45sp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/emailTIL">
+        <EditText
+            android:id="@+id/emailEt"
+            android:inputType="textEmailAddress"
+            android:hint="Email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/passwordTIL"
+        android:layout_below="@+id/emailTIL"
+        app:passwordToggleEnabled="true">
+        <EditText
+            android:id="@+id/passwordEt"
+            android:inputType="textPassword"
+            android:hint="Password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/loginBtn"
+        style="@style/TextAppearance.AppCompat.Widget.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/passwordTIL"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:text="Login" />
+
+    <LinearLayout
+        android:id="@+id/recoverLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/loginBtn"
+        android:layout_marginBottom="20dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/recoverTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Forgot Password?  "
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/recoverPassTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recover"
+            android:textColor="@color/purple_500" />
+    </LinearLayout>
+
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/googleLoginBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/recoverLayout">
+
+    </com.google.android.gms.common.SignInButton>
+
+    <LinearLayout
+        android:id="@+id/registerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/textTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Don't have account?  "
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/notHave_accountTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register"
+            android:textColor="@color/purple_500" />
+    </LinearLayout>
+
+</RelativeLayout>
