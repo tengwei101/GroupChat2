@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -166,11 +167,33 @@ public class EditScheduleActivity extends AppCompatActivity {
         String color = colorEt.getText().toString().trim();
         String description = descriptionEt.getText().toString();
 
+        if(TextUtils.isEmpty(title)){
+            Toast.makeText(this, "Please enter schedule title...", Toast.LENGTH_SHORT).show();
+            return; //dont proceed further
+        }
+
+        if(TextUtils.isEmpty(dayOfWeek)){
+            Toast.makeText(this, "Please enter day of week...", Toast.LENGTH_SHORT).show();
+            return; //dont proceed further
+        }
+
+        if(TextUtils.isEmpty(startTime)){
+            Toast.makeText(this, "Please enter Start Time...", Toast.LENGTH_SHORT).show();
+            return; //dont proceed further
+        }
+
+        if(TextUtils.isEmpty(endTime)){
+            Toast.makeText(this, "Please enter End Time...", Toast.LENGTH_SHORT).show();
+            return; //dont proceed further
+        }
+
+
         if (scheduleId != -1) {
             int numberOfRowsUpdated = dbHelper.updateSchedule(scheduleId, title, dayOfWeek, startTime, endTime, color, description);
 
             if (numberOfRowsUpdated > 0) {
                 Toast.makeText(this, "Schedule Updated Successfully...", Toast.LENGTH_SHORT).show();
+                finish();
                 // data updated successfully
             } else {
                 Toast.makeText(this, "Failed to update schedule...", Toast.LENGTH_SHORT).show();

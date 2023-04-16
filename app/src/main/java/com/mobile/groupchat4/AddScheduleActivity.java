@@ -11,6 +11,7 @@ import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -146,8 +147,29 @@ public class AddScheduleActivity extends AppCompatActivity {
         String color = colorEt.getText().toString().trim();
         String description = descriptionEt.getText().toString();
         long id = dbHelper.insertSchedule(title, dayOfWeek, startTime, endTime, color, description);
+
+        if(TextUtils.isEmpty(title)){
+            Toast.makeText(this, "Please enter schedule title...", Toast.LENGTH_SHORT).show();
+            return; //dont proceed further
+        }
+
+        if(TextUtils.isEmpty(dayOfWeek)){
+            Toast.makeText(this, "Please enter day of week...", Toast.LENGTH_SHORT).show();
+            return; //dont proceed further
+        }
+
+        if(TextUtils.isEmpty(startTime)){
+            Toast.makeText(this, "Please enter Start Time...", Toast.LENGTH_SHORT).show();
+            return; //dont proceed further
+        }
+
+        if(TextUtils.isEmpty(endTime)){
+            Toast.makeText(this, "Please enter End Time...", Toast.LENGTH_SHORT).show();
+            return; //dont proceed further
+        }
         if (id != -1) {
             Toast.makeText(this, "Schedule Added Successfully...", Toast.LENGTH_SHORT).show();
+            finish();
             // data inserted successfully
         } else {
             Toast.makeText(this, "Failed to add schedule...", Toast.LENGTH_SHORT).show();

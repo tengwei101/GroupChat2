@@ -9,6 +9,7 @@ import android.content.DialogInterface;
 import android.graphics.Color;
 import android.icu.util.Calendar;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -122,9 +123,25 @@ public class AddTaskActivity extends AppCompatActivity {
         String status = "inProgress";
         String subjectTitle = subjectSpinner.getSelectedItem().toString();
 
+        if(TextUtils.isEmpty(title)){
+            Toast.makeText(this, "Please enter schedule title...", Toast.LENGTH_SHORT).show();
+            return; //dont proceed further
+        }
+
+        if(TextUtils.isEmpty(date)){
+            Toast.makeText(this, "Please enter deadline...", Toast.LENGTH_SHORT).show();
+            return; //dont proceed further
+        }
+
+        if(TextUtils.isEmpty(subjectTitle)){
+            Toast.makeText(this, "Please enter Subject Title...", Toast.LENGTH_SHORT).show();
+            return; //dont proceed further
+        }
+
         long id = dbHelper.insertTask(title, date, time, description, subjectTitle, status);
         if (id != -1) {
             Toast.makeText(this, "Task Added Successfully...", Toast.LENGTH_SHORT).show();
+            finish();
             // data inserted successfully
         } else {
             Toast.makeText(this, "Failed to add task...", Toast.LENGTH_SHORT).show();

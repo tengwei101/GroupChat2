@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.icu.util.Calendar;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -154,8 +155,24 @@ public class EditTaskActivity extends AppCompatActivity {
 
         boolean isSuccess = dbHelper.updateTask(id, title, date, time, description, subjectTitle);
 
+        if(TextUtils.isEmpty(title)){
+            Toast.makeText(this, "Please enter schedule title...", Toast.LENGTH_SHORT).show();
+            return; //dont proceed further
+        }
+
+        if(TextUtils.isEmpty(date)){
+            Toast.makeText(this, "Please enter deadline...", Toast.LENGTH_SHORT).show();
+            return; //dont proceed further
+        }
+
+        if(TextUtils.isEmpty(subjectTitle)){
+            Toast.makeText(this, "Please enter Subject Title...", Toast.LENGTH_SHORT).show();
+            return; //dont proceed further
+        }
+
         if (isSuccess) {
             Toast.makeText(this, "Task updated successfully...", Toast.LENGTH_SHORT).show();
+            finish();
             // data updated successfully
         } else {
             Toast.makeText(this, "Failed to update task...", Toast.LENGTH_SHORT).show();

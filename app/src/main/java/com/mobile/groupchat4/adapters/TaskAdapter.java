@@ -69,6 +69,11 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
         String dayOfWeek = getDayOfWeek(date);
         holder.dayofWeekTv.setText(dayOfWeek);
 
+        holder.timeTv.setText(task.getTime());
+
+        if (task.getTime().equals("")){
+            holder.timeTv.setVisibility(View.GONE);
+        }
 
         holder.dateTv.setText(task.getDate());
 
@@ -139,7 +144,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
     }
 
     public class TaskViewHolder extends RecyclerView.ViewHolder {
-        TextView taskTv, subjectTv, dateTv, dayofWeekTv, descriptionTv;
+        TextView taskTv, subjectTv, dateTv, dayofWeekTv, descriptionTv, timeTv;
         ImageButton editButton, deleteButton, isCompletedButton;
         RelativeLayout taskLayout;
 
@@ -154,6 +159,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
             editButton = itemView.findViewById(R.id.editButton);
             deleteButton = itemView.findViewById(R.id.deleteButton);
             isCompletedButton = itemView.findViewById(R.id.isCompletedButton);
+            timeTv = itemView.findViewById(R.id.timeTv);
         }
     }
 }
