@@ -207,9 +207,10 @@ public class AddScheduleActivity extends AppCompatActivity {
 
     private void showColorPickerDialog() {
         final int[] colors = {
-                Color.parseColor("#F58185"), Color.parseColor("#F07692"), Color.parseColor("#7FBAD0"),
-                Color.parseColor("#4993C5"), Color.parseColor("#BCDE71"), Color.parseColor("#8BB876"),
-                Color.parseColor("#CAA7DD"), Color.parseColor("#B08CC6")
+                Color.parseColor("#F58185"), Color.parseColor("#F07692"), Color.parseColor("#FA8071"),
+                Color.parseColor("#7FBAD0"), Color.parseColor("#4993C5"), Color.parseColor("#4880AF"),
+                Color.parseColor("#BCDE71"), Color.parseColor("#8BB876"), Color.parseColor("#8BB930"),
+                Color.parseColor("#CAA7DD"), Color.parseColor("#B08CC6"), Color.parseColor("#6A68BE"),
         };
 
         ColorPickerAdapter adapter = new ColorPickerAdapter(this, colors);
