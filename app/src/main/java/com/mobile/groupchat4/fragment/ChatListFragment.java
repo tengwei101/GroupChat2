@@ -34,7 +34,6 @@ import com.mobile.groupchat4.adapters.AdapterChatlist;
 import com.mobile.groupchat4.models.ModelChat;
 import com.mobile.groupchat4.models.ModelChatlist;
 import com.mobile.groupchat4.models.ModelUser;
-import com.mobile.groupchat4.notifications.Data;
 
 import java.util.ArrayList;
 import java.util.List;

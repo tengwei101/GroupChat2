@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TimetableActivity"
+    android:orientation="vertical"
+    android:background="#EE1E201F">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/chatButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_chat_icon"
+            android:layout_alignParentStart="true"
+            android:contentDescription="Group Chat"
+            android:background="?android:attr/selectableItemBackgroundBorderless" />
+
+        <ImageButton
+            android:id="@+id/plusButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@android:drawable/ic_input_add"
+            android:layout_alignParentEnd="true"
+            android:contentDescription="Add Schedule"
+            android:background="?android:attr/selectableItemBackgroundBorderless" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:id="@+id/daysOfWeekLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton">
+
+        <TextView
+            android:id="@+id/mondayTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="MON"
+            android:textSize="30sp"
+            android:textColor="#554F4F"
+            android:gravity="center"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tuesdayTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="TUE"
+            android:textSize="30sp"
+            android:textColor="#554F4F"
+            android:gravity="center"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/wednesdayTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="WED"
+            android:textSize="30sp"
+            android:textColor="#554F4F"
+            android:gravity="center"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/thursdayTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="THU"
+            android:textSize="30sp"
+            android:textColor="#554F4F"
+            android:gravity="center"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/fridayTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="FRI"
+            android:textSize="30sp"
+            android:textColor="#554F4F"
+            android:gravity="center"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/scheduleRv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/schedule_item"/>
+
+    <Button
+        android:id="@+id/taskButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="Tasks"
+        android:text="Tasks"
+        app:srcCompat="@android:drawable/ic_dialog_info" />
+
+</LinearLayout>

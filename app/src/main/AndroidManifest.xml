@@ -16,6 +16,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GroupChat4">
         <activity
+            android:name=".TaskActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TimetableActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".EditTaskActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditScheduleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddTaskActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddScheduleActivity"
+            android:exported="false" />
+        <activity
             android:name=".GroupEditActivity"
             android:exported="false" />
         <activity
@@ -46,12 +71,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:exported="false">
         </activity>
     </application>
 
