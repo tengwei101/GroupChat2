@@ -156,7 +156,7 @@ public class EditTaskActivity extends AppCompatActivity {
         boolean isSuccess = dbHelper.updateTask(id, title, date, time, description, subjectTitle);
 
         if(TextUtils.isEmpty(title)){
-            Toast.makeText(this, "Please enter schedule title...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please enter task title...", Toast.LENGTH_SHORT).show();
             return; //dont proceed further
         }
 
@@ -180,8 +180,7 @@ public class EditTaskActivity extends AppCompatActivity {
         }
     }
 
-
-
+    
     private void initializeSubjectSpinner() {
         // Fetch the schedule titles from the database
         TimetableDatabaseHelper dbHelper = TimetableDatabaseHelper.getInstance(this);

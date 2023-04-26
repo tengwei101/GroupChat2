@@ -124,7 +124,7 @@ public class AddTaskActivity extends AppCompatActivity {
         String subjectTitle = subjectSpinner.getSelectedItem().toString();
 
         if(TextUtils.isEmpty(title)){
-            Toast.makeText(this, "Please enter schedule title...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please enter task title...", Toast.LENGTH_SHORT).show();
             return; //dont proceed further
         }
 
